@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ToD</title>
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<section class="menu">
+			<h1>Termine o Ditado</h1>
+			<section class="dificuldade">
+				<h4>Selecione a quantidade de frases:</h4>
+				<section class="range">
+					<input type="range" min="1" max="10" step="1" value="1">
+					<input type="number" min="1" max="10" value="1" required>
+				</section>
+				<span>Tá de brincadeira?</span>
+			</section>
+			<button id="iniciarBtn">Começar Já</button>
+		</section>
+		<section class="janela_interacao oculto">
+			<section class="header">
+				<p>Arraste a palavra e solte na caixa para responder</p>
+				<h2 id="numRodada"></h2>
+			</section>
+			<section class="janela_ditado">
+				<section class="frase">
+					<span id="f1"></span>
+					<section id="palavra_chave" class="pc">
+					</section>
+					<span id="f2"></span>
+				</section>
+				<section class="opcoes">
+					<span id="opc1" draggable="true"></span>
+					<span id="opc2" draggable="true"></span>
+					<span id="opc3" draggable="true"></span>
+				</section>
+			</section>
+			<section class="buttons">
+				<button id="desistirBtn">Desistir</button>
+				<span id="tempoRestante">10s</span>
+				<button id="proximoBtn">Próximo</button>
+			</section>
+		</section>
+		<section class="janela_pontuacao oculto">
+			<p>Você acertou</p>
+			<span class="pontuacao"></span>
+			<button id="btnVoltarMenu">Voltar ao menu</button>
+		</section>
+		<script src="main.js"></script>
+	</body>
+
+</html>

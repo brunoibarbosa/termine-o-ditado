@@ -1,0 +1,260 @@
+:root {
+    --cor-principal: #F53030;
+}
+
+* {
+    margin: 0;
+    padding: 0;;
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+    outline: none;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    color: #2d2d2d;
+    overflow-x: hidden;
+}
+
+button {
+    cursor: pointer;
+    background-color: var(--cor-principal);
+    border: 0;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    transition: .1s ease;
+}
+
+button:hover {
+    background-color: #bd2727;
+}
+
+input[type='number']::-webkit-inner-spin-button, 
+input[type='number']::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number']:hover::-webkit-inner-spin-button{
+    -webkit-appearance: sliderthumb-vertical;
+    color: red
+}
+
+.menu {
+    position: absolute;
+    left: 50vw;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 4rem 6rem;
+    border: 1px solid rgb(185, 185, 185);
+    border-radius: 20px;
+    transition: left 1s ease-in-out;
+}
+
+.menu.oculto {
+    left: -100%;
+}
+
+.menu h1 {
+    font-size: 4rem;
+    color: var(--cor-principal);
+}
+
+.menu .dificuldade {
+    margin: 30px 0 50px;
+}
+
+.menu .range {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.menu .range input[type=number] {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #333333;
+    border-radius: 2px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.janela_interacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    min-width: 80%;
+    min-height: 80vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    transition: left 1s ease-in-out;
+}
+
+.janela_interacao.oculto {
+    left: 200%;
+}
+
+.janela_interacao .header{
+    border-bottom: 1px solid silver;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.janela_interacao .header h1 {
+    color: var(--cor-principal);
+}
+
+.janela_ditado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.frase, .opcoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.opcoes {
+    font-size: 1.5rem;
+}
+
+.frase > span {
+    pointer-events: none;
+}
+
+.frase .pc {
+    min-width: 5rem;
+    min-height: 2.5rem;
+    margin: 0 .7rem;
+    position: relative;
+}
+
+.pc::after {
+    content: '';
+    position: absolute;
+    border-radius: .5rem;
+    border: 2px solid silver;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.pc span {
+    cursor: pointer;
+    padding: 0 1rem;
+}
+
+.opcoes {
+    margin-top: 70px;
+}
+
+.opcoes span {
+    margin: 0 1rem;
+    border: 2px solid var(--cor-principal);
+    border-radius: .5rem;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid silver;
+    padding-top: 2rem;
+}
+
+#desistirBtn {
+    position: relative;
+}
+
+#desistirBtn:hover::after {
+    visibility: visible;
+}
+
+#desistirBtn::after {
+    content: 'Para desistir clique 2x';
+    position: absolute;
+    left: 120%;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    font-weight: normal;
+    color: #333;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+}
+
+.buttons::after {
+    top: -50%;
+}
+
+.buttons #proximoBtn {
+    background-color: #2ecc71;
+}
+
+.buttons #proximoBtn:hover {
+    background-color: #27ac5e;
+}
+
+.janela_pontuacao {
+    text-align: center;
+    padding: 2rem 4rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    background-color: #fff;
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: .3s ease-in-out;
+}
+
+.janela_pontuacao.oculto {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.janela_pontuacao p {
+    line-height: 1.5rem;
+}
+
+.pontuacao {
+    margin: 1.5rem 0;
+    font-weight: bold;
+}
+
+#tempoRestante.alerta {
+    color: red;
+}
+
+@media (min-width: 1600px) {
+    html {font-size: 120%;}
+}
+
+@media (min-width: 1900px) {
+    html {font-size: 140%;}
+}
